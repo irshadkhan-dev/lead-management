@@ -30,19 +30,26 @@ export default function Home() {
   } = useQuery<Leads[]>({
     queryKey: ["allLeads"],
     queryFn: async () => {
-      const response = await axios.get("http://localhost:3001/lead");
+      const response = await axios.get(
+        "https://lead-management-nq9q.onrender.com/lead"
+      );
       return response.data;
     },
+    staleTime: Infinity,
   });
 
   const handleAddLead = async (newLead: Omit<Leads, "id" | "createdAt">) => {
-    const addLead = await axios.post("http://localhost:3001/lead", {
-      newLead,
-    });
+    const addLead = await axios.post(
+      "https://lead-management-nq9q.onrender.com/lead",
+      {
+        newLead,
+      }
+    );
 
     if (addLead.data.success) {
       await queryClient.invalidateQueries({ queryKey: ["allLeads"] });
     }
+    setIsModalOpen(false);
   };
 
   return (
