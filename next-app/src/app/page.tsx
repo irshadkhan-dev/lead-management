@@ -56,12 +56,12 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto py-8 px-4">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900">Lead Management</h1>
+          <h1 className="text-2xl md:text-4xl font-bold text-gray-900">Lead Management</h1>
           <button
             onClick={() => setIsModalOpen(true)}
-            className="flex items-center bg-blue-600 text-white text-xl p-2 rounded-2xl"
+            className="flex items-center bg-blue-600 text-white text-sm md:text-xl p-2 rounded-2xl"
           >
-            <PlusCircle className="mr-2 h-4 w-4" />
+            <PlusCircle className="mr-2 h-4 w-4 shrink-0" />
             Add New Lead
           </button>
         </div>
