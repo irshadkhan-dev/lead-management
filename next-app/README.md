@@ -6,7 +6,7 @@
 
     ```bash
     git clone https://github.com/irshadkhan-dev/lead-management.git
-    cd lead-management/next-app
+    cd next-app
     ```
 
 2.  **Install dependencies:**
